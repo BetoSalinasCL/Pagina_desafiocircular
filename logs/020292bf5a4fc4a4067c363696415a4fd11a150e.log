@@ -1,0 +1,17 @@
+# commit: 020292bf5a4fc4a4067c363696415a4fd11a150e
+# inicio: 2026-11-19T22:09:13Z
+total 4
+-rwx------ 1 dcdeploy dcdeploy 1780 Nov 19 22:09 bootstrap-root.sh
+=== ufw (sin sudo, desde reglas legibles) ===
+total 48
+-rw-r----- 1 root root 1126 Mar 23  2026 after.init
+-rw-r----- 1 root root 1004 Mar 11  2024 after.rules
+-rw-r----- 1 root root  915 Mar 11  2024 after6.rules
+drwxr-xr-x 2 root root 4096 Oct 27 06:06 applications.d
+-rw-r----- 1 root root 1130 Mar 23  2026 before.init
+-rw-r----- 1 root root 2537 Mar 11  2024 before.rules
+-rw-r----- 1 root root 6700 Mar 11  2024 before6.rules
+-rw-r--r-- 1 root root 1391 May 16  2023 sysctl.conf
+-rw-r--r-- 1 root root  313 May  1  2026 ufw.conf
+# exit_code: 0
+# fin: 2026-11-19T22:09:13Z
