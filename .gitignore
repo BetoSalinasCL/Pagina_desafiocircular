@@ -1,0 +1,26 @@
+# Secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Dependencias y builds
+node_modules/
+dist/
+.astro/
+.output/
+
+# Datos locales
+uploads/
+*.sql
+*.dump
+backups/
+
+# Logs y sistema
+*.log
+npm-debug.log*
+.DS_Store
+.vscode/
+.idea/
