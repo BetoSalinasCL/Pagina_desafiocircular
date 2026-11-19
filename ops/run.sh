@@ -19,3 +19,4 @@ s ACTUALIZACIONES; apt list --upgradable 2>/dev/null | grep -c upgradable
 s DNS;       for h in desafiocircular.org www.desafiocircular.org preview.desafiocircular.org betosalinas.cl; do printf "%-30s " $h; getent ahostsv4 $h | awk '{print $1}' | sort -u | paste -sd' '; done
 s RUNNER;    systemctl list-units --no-pager --no-legend 'actions.runner*' 2>&1
 s SRV;       ls -la /srv /srv/desafiocircular 2>&1
+# run: diagnóstico inicial 2026-11-19T22:07:45Z
