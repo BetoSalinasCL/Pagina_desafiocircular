@@ -1,0 +1,56 @@
+# Canal de operación remota en el VPS.
+# Push a la rama `ops` con ops/run.sh → el runner self-hosted (usuario dcdeploy)
+# lo ejecuta → la salida se publica en la rama `ops-logs` (logs/<sha>.log y latest.log).
+# Requiere repositorio PRIVADO: la salida puede contener datos del servidor.
+name: ops
+
+on:
+  push:
+    branches: [ops]
+    paths: ["ops/**"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ops
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: self-hosted
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ejecutar ops/run.sh
+        id: run
+        run: |
+          set +e
+          {
+            echo "# commit: $GITHUB_SHA"
+            echo "# inicio: $(date -u +%FT%TZ)"
+            bash ops/run.sh
+            echo "# exit_code: $?"
+            echo "# fin: $(date -u +%FT%TZ)"
+          } > /tmp/ops-out.log 2>&1
+          exit 0
+
+      - name: Publicar salida en ops-logs
+        if: always()
+        run: |
+          git config user.name "ops-runner"
+          git config user.email "ops-runner@users.noreply.github.com"
+          if git fetch origin ops-logs 2>/dev/null; then
+            git checkout -B ops-logs origin/ops-logs
+          else
+            git checkout --orphan ops-logs
+            git rm -rfq . || true
+          fi
+          mkdir -p logs
+          cp /tmp/ops-out.log "logs/${GITHUB_SHA}.log"
+          cp /tmp/ops-out.log latest.log
+          git add logs latest.log
+          git commit -qm "log ${GITHUB_SHA::7}"
+          git push -q origin ops-logs
+          rm -f /tmp/ops-out.log
