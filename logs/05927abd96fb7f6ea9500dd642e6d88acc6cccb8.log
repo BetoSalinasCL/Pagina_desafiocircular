@@ -1,0 +1,7 @@
+# commit: 05927abd96fb7f6ea9500dd642e6d88acc6cccb8
+# inicio: 2026-11-20T01:19:23Z
+-rwx------ 1 dcdeploy dcdeploy 1386 Nov 20 01:19 /srv/desafiocircular/root-2.sh
+-rwxr-xr-x 1 dcdeploy dcdeploy 124909296 Nov 11 11:01 /home/dcdeploy/.fnm/aliases/default/bin/node
+-rwxr-xr-x 1 dcdeploy dcdeploy       198 Nov 20 01:17 /srv/desafiocircular/directus/node_modules/directus/cli.js
+# exit_code: 0
+# fin: 2026-11-20T01:19:23Z
