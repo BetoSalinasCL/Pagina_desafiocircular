@@ -1,0 +1,10 @@
+# commit: 8145826e52ab6b55622cb5bb284718145a1f37d4
+# inicio: 2026-11-20T01:30:32Z
+ns1.sociovirtual.com   177.7.56.127
+8.8.8.8                177.7.56.127
+1.1.1.1                177.7.56.127
+== TXT/registros a migrar (muestra)
+"v=spf1 include:one.zoho.com -all"
+"zoho-verification=zb07732529.zmverify.zoho.com"
+# exit_code: 0
+# fin: 2026-11-20T01:30:33Z

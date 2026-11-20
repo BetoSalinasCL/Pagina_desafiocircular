@@ -1,23 +1,10 @@
-# commit: 8cf82d0c908e6a76f30039f7fbf1a790af052232
-# inicio: 2026-11-20T01:25:48Z
-== NS
-sd05a-ga.privatesystems.net.
-sd05b-ga.privatesystems.net.
-== SOA
-sd05a-ga.privatesystems.net. noc.privatesystems.net. 2026101001 3600 1800 1209600 86400
-== MX
-1 ASPMX.L.GOOGLE.COM.
-5 ALT1.ASPMX.L.GOOGLE.COM.
-10 ALT4.ASPMX.L.GOOGLE.COM.
-5 ALT2.ASPMX.L.GOOGLE.COM.
-10 ALT3.ASPMX.L.GOOGLE.COM.
-== A
-170.249.239.131
-== host IP actual
-131-239.semidedi05-ga.privatesystems.net.
-== whois NS
-Registrar: GoDaddy.com, LLC
-Name Server: ns1.sociovirtual.com
-Name Server: ns2.sociovirtual.com
+# commit: 8145826e52ab6b55622cb5bb284718145a1f37d4
+# inicio: 2026-11-20T01:30:32Z
+ns1.sociovirtual.com   177.7.56.127
+8.8.8.8                177.7.56.127
+1.1.1.1                177.7.56.127
+== TXT/registros a migrar (muestra)
+"v=spf1 include:one.zoho.com -all"
+"zoho-verification=zb07732529.zmverify.zoho.com"
 # exit_code: 0
-# fin: 2026-11-20T01:25:49Z
+# fin: 2026-11-20T01:30:33Z
