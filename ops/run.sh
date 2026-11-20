@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-for ns in ns1.sociovirtual.com 8.8.8.8; do echo "== @$ns"; dig +short google._domainkey.desafiocircular.org TXT @$ns | tr -d '" ' | head -c 90; echo; done
-V=$(dig +short google._domainkey.desafiocircular.org TXT @ns1.sociovirtual.com | tr -d '" \n'); echo "largo clave p=: $(echo "$V" | sed 's/.*p=//' | wc -c)"
-echo "$V" | grep -q '^v=DKIM1;k=rsa;p=MII' && echo "FORMATO OK" || echo "FORMATO REVISAR"
+echo "directus: $(systemctl is-active dc-directus)  enabled: $(systemctl is-enabled dc-directus)"
+curl -fs http://127.0.0.1:8055/server/health; echo
+systemctl list-timers dc-reboot.timer --no-pager --no-legend 2>&1 | head -1
+curl -s -o /dev/null -w "https sin clave: %{http_code}\n" https://preview.desafiocircular.org/
+curl -s -o /dev/null -w "http -> %{http_code} %{redirect_url}\n" http://preview.desafiocircular.org/
+echo | openssl s_client -connect preview.desafiocircular.org:443 -servername preview.desafiocircular.org 2>/dev/null | openssl x509 -noout -issuer -enddate
+curl -sI https://preview.desafiocircular.org/ | grep -iE "x-robots|strict"
+free -h | sed -n 2,3p
