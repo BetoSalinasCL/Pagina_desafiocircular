@@ -1,6 +1,10 @@
-# commit: beabecc33a8a5f33bd3ac24761cf01eca49a03f4
-# inicio: 2026-11-20T01:31:43Z
-local: 200
-publico: 200
+# commit: a7561f0d44063a108697a6d255faff951c4fab4e
+# inicio: 2026-11-20T01:43:34Z
+== @ns1.sociovirtual.com
+"v=spf1 include:_spf.google.com ip4:170.249.239.131 ~all"
+"v=DMARC1; p=none;"
+== @8.8.8.8
+"v=spf1 include:_spf.google.com ip4:170.249.239.131 ~all"
+"v=DMARC1; p=none;"
 # exit_code: 0
-# fin: 2026-11-20T01:31:44Z
+# fin: 2026-11-20T01:43:35Z
