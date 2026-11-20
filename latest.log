@@ -1,7 +1,23 @@
-# commit: 05927abd96fb7f6ea9500dd642e6d88acc6cccb8
-# inicio: 2026-11-20T01:19:23Z
--rwx------ 1 dcdeploy dcdeploy 1386 Nov 20 01:19 /srv/desafiocircular/root-2.sh
--rwxr-xr-x 1 dcdeploy dcdeploy 124909296 Nov 11 11:01 /home/dcdeploy/.fnm/aliases/default/bin/node
--rwxr-xr-x 1 dcdeploy dcdeploy       198 Nov 20 01:17 /srv/desafiocircular/directus/node_modules/directus/cli.js
+# commit: 8cf82d0c908e6a76f30039f7fbf1a790af052232
+# inicio: 2026-11-20T01:25:48Z
+== NS
+sd05a-ga.privatesystems.net.
+sd05b-ga.privatesystems.net.
+== SOA
+sd05a-ga.privatesystems.net. noc.privatesystems.net. 2026101001 3600 1800 1209600 86400
+== MX
+1 ASPMX.L.GOOGLE.COM.
+5 ALT1.ASPMX.L.GOOGLE.COM.
+10 ALT4.ASPMX.L.GOOGLE.COM.
+5 ALT2.ASPMX.L.GOOGLE.COM.
+10 ALT3.ASPMX.L.GOOGLE.COM.
+== A
+170.249.239.131
+== host IP actual
+131-239.semidedi05-ga.privatesystems.net.
+== whois NS
+Registrar: GoDaddy.com, LLC
+Name Server: ns1.sociovirtual.com
+Name Server: ns2.sociovirtual.com
 # exit_code: 0
-# fin: 2026-11-20T01:19:23Z
+# fin: 2026-11-20T01:25:49Z
