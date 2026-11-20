@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-for t in NS SOA MX A; do echo "== $t"; dig +short desafiocircular.org $t; done
-echo "== host IP actual"; dig +short -x 170.249.239.131
-echo "== whois NS"; whois desafiocircular.org 2>/dev/null | grep -iE "name server|registrar:" | head
+for ns in ns1.sociovirtual.com 8.8.8.8 1.1.1.1; do printf "%-22s " $ns; dig +short preview.desafiocircular.org A @$ns | paste -sd' '; done
+echo "== TXT/registros a migrar (muestra)"; dig +short desafiocircular.org TXT; dig +short _dmarc.desafiocircular.org TXT; dig +short google._domainkey.desafiocircular.org TXT | cut -c1-60
