@@ -1,0 +1,13 @@
+# commit: e07e0c047aa59e71f97062ffae80491d66500f60
+# inicio: 2026-11-20T01:54:41Z
+-rw-r----- 1 root     www-data   46 Nov 20 01:32 .htpasswd
+RELOAD-OK
+https sin clave: 401
+http: 301 -> https://preview.desafiocircular.org/
+betosalinas.cl: 301
+www-authenticate: Basic realm="Preview Desafio Circular"
+x-robots-tag: noindex, nofollow
+strict-transport-security: max-age=31536000
+referrer-policy: strict-origin-when-cross-origin
+# exit_code: 0
+# fin: 2026-11-20T01:54:42Z
