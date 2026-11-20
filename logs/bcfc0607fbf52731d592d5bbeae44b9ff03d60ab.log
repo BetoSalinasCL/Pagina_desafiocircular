@@ -1,0 +1,14 @@
+# commit: bcfc0607fbf52731d592d5bbeae44b9ff03d60ab
+# inicio: 2026-11-20T02:00:17Z
+total 28
+drwxr-xr-x 2 dcdeploy dcdeploy 4096 Nov 20 01:59 .
+drwxr-xr-x 4 dcdeploy dcdeploy 4096 Nov 20 01:59 ..
+-rw-r--r-- 1 dcdeploy dcdeploy 2834 Nov 20 01:59 404.html
+-rw-r--r-- 1 dcdeploy dcdeploy  145 Nov 20 01:58 favicon.svg
+-rw-r--r-- 1 dcdeploy dcdeploy 7709 Nov 20 01:59 index.html
+-rw-r--r-- 1 dcdeploy dcdeploy   26 Nov 20 01:58 robots.txt
+<title>Fundación Desafío Circular
+1
+preview: 401
+# exit_code: 0
+# fin: 2026-11-20T02:00:17Z
