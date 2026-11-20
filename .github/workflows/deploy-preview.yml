@@ -1,0 +1,34 @@
+# develop → preview.desafiocircular.org (runner self-hosted en el VPS, usuario dcdeploy)
+name: deploy-preview
+on:
+  push:
+    branches: [develop]
+    paths: ["web/**", ".github/workflows/deploy-preview.yml"]
+  workflow_dispatch:
+concurrency: { group: deploy-preview, cancel-in-progress: true }
+permissions: { contents: read }
+jobs:
+  deploy:
+    runs-on: self-hosted
+    timeout-minutes: 15
+    defaults: { run: { working-directory: web } }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          export PATH=$HOME/.fnm/aliases/default/bin:$PATH
+          node -v
+          npm ci --no-audit --no-fund --loglevel=error
+          npm run build
+      - name: Publicar (swap atómico)
+        run: |
+          W=/srv/desafiocircular/www
+          rm -rf $W/preview.new $W/preview.old
+          cp -a dist $W/preview.new
+          chmod -R o+rX $W/preview.new
+          mv $W/preview $W/preview.old && mv $W/preview.new $W/preview && rm -rf $W/preview.old
+      - name: Verificar
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://preview.desafiocircular.org/)
+          echo "preview responde $code (401 = protegido con clave, OK)"
+          test "$code" = "401"

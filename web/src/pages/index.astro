@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+// Cifras validadas (instrucciones del proyecto). No agregar cifras sin respaldo.
+const cifras = [
+  { n: '3', t: 'ediciones de Circular Awards (2023, 2025, 2026)' },
+  { n: '+660', t: 'postulaciones' },
+  { n: '+2000', t: 'descargas de bases' },
+  { n: '33', t: 'jurados en 2026' },
+  { n: '27', t: 'iniciativas reconocidas en 2026' },
+];
+const programas = [
+  'Circular Awards',
+  'Desafío Proveedores',
+  'Desafío Emprendedores Sostenibles',
+  'Cultura Sostenible',
+  'Asesorías Internacionales',
+];
+---
+<Base>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Fundación Desafío Circular</p>
+      <h1>Visibilizamos la sostenibilidad que crea valor.</h1>
+      <p class="lead">[Bajada pendiente de aprobación: propuesta de valor para empresas, aliados y patrocinadores.]</p>
+      <p class="ctas">
+        <a class="btn" href="#contacto">Conversemos</a>
+        <a class="btn ghost" href="#circular-awards">Conoce Circular Awards</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="circular-awards" class="band" aria-labelledby="ca-title">
+    <div class="wrap">
+      <h2 id="ca-title">Circular Awards en cifras</h2>
+      <ul class="kpis">
+        {cifras.map((c) => <li><span class="n">{c.n}</span><span class="t">{c.t}</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section id="quienes-somos" class="wrap block">
+    <h2>Quiénes somos</h2>
+    <p class="todo">[Contenido desde la presentación institucional oficial — pendiente de redacción y aprobación.]</p>
+  </section>
+
+  <section id="programas" class="wrap block">
+    <h2>Programas</h2>
+    <ul class="cards">
+      {programas.map((p) => <li><h3>{p}</h3><p class="todo">[Descripción pendiente.]</p></li>)}
+    </ul>
+  </section>
+
+  <section id="contacto" class="wrap block">
+    <h2>Contacto</h2>
+    <p class="todo">[Formulario con consentimientos separados (Ley 21.719) — siguiente entrega, conectado al CRM.]</p>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-block: clamp(3rem, 10vw, 7rem); background: #fff; border-bottom: 1px solid var(--line); }
+  .eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .02em; margin: 0 0 .75rem; }
+  h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin: 0 0 1rem; max-width: 18ch; }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 60ch; }
+  .ctas { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }
+  .btn { display: inline-flex; align-items: center; min-height: 44px; padding: .65rem 1.25rem; border-radius: 6px; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+  .band { background: var(--fg); color: #fff; padding-block: 3.5rem; }
+  .band h2 { margin-top: 0; }
+  .kpis { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+  .kpis .n { display: block; font-size: 2.4rem; font-weight: 700; font-variant-numeric: tabular-nums; color: #9fd8b4; }
+  .kpis .t { color: #d5ddd7; font-size: .95rem; }
+  .block { padding-top: 3.5rem; }
+  .cards { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .cards li { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.25rem; }
+  .cards h3 { margin: 0 0 .5rem; font-size: 1.1rem; }
+  .todo { color: #8a6d1f; background: #fff8e6; border: 1px dashed #e6cf8f; padding: .5rem .75rem; border-radius: 6px; display: inline-block; }
+</style>

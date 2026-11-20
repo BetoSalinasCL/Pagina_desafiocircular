@@ -28,3 +28,7 @@
 
 ## 2026-11-19 (7)
 - Fix: nginx 1.24 no soporta `http2 on;` → `listen 443 ssl http2`. El reload de root-3 había fallado sin detener el script.
+
+## 2026-11-19 (8)
+- `web/`: esqueleto Astro 7 con estilo neutro PROVISORIO (estilo y colores pendientes de definición de marca). Cifras solo validadas.
+- Workflow `deploy-preview`: push a `develop` en `web/**` → build en el VPS → publicación atómica en preview.
