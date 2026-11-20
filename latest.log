@@ -1,17 +1,45 @@
-# commit: 020292bf5a4fc4a4067c363696415a4fd11a150e
-# inicio: 2026-11-19T22:09:13Z
-total 4
--rwx------ 1 dcdeploy dcdeploy 1780 Nov 19 22:09 bootstrap-root.sh
-=== ufw (sin sudo, desde reglas legibles) ===
-total 48
--rw-r----- 1 root root 1126 Mar 23  2026 after.init
--rw-r----- 1 root root 1004 Mar 11  2024 after.rules
--rw-r----- 1 root root  915 Mar 11  2024 after6.rules
-drwxr-xr-x 2 root root 4096 Oct 27 06:06 applications.d
--rw-r----- 1 root root 1130 Mar 23  2026 before.init
--rw-r----- 1 root root 2537 Mar 11  2024 before.rules
--rw-r----- 1 root root 6700 Mar 11  2024 before6.rules
--rw-r--r-- 1 root root 1391 May 16  2023 sysctl.conf
--rw-r--r-- 1 root root  313 May  1  2026 ufw.conf
+# commit: 77ffdac06d78fa7d6abc9e510bc064b68b599276
+# inicio: 2026-11-20T01:15:01Z
+=== VERIFICACION ===
+Swap:          2.0Gi          0B       2.0Gi
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+lrwxrwxrwx 1 root     root       53 Nov 20 01:13 /etc/nginx/sites-enabled/desafiocircular.conf -> /srv/desafiocircular/infra/nginx/desafiocircular.conf
+
+/srv/desafiocircular/infra/nginx/:
+total 0
+-rw-r--r-- 1 dcdeploy dcdeploy 0 Nov 20 01:13 desafiocircular.conf
+.env OK (600)
+DB OK dc_directus
+--- ufw ---
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere                  
+Nginx Full                 ALLOW       Anywhere                  
+OpenSSH (v6)               ALLOW       Anywhere (v6)             
+Nginx Full (v6)            ALLOW       Anywhere (v6)             
+
+=== NODE 22 ===
+v22.23.5
+10.9.9
+=== DIRECTUS ===
+
+added 1440 packages in 3m
+11.17.4
+[01:18:36.151] [32mINFO[39m: [36mApplying Add Deployment...[39m
+[01:18:36.181] [32mINFO[39m: [36mApplying Add Deployment Webhooks...[39m
+[01:18:36.209] [32mINFO[39m: [36mSetting up first admin role...[39m
+[01:18:36.229] [32mINFO[39m: [36mAdding first admin user...[39m
+[01:18:36.511] [32mINFO[39m: [36mDone[39m
+=== ARRANQUE DE PRUEBA ===
+{"status":"ok"}
+88540 npm exec directus start
+ 1984 sh -c directus start
+[01:18:42.278] [33mWARN[39m: [36mPostGIS isn't installed. Geometry type support will be limited.[39m
+[01:18:42.279] [33mWARN[39m: [36mExtensions directory (/srv/desafiocircular/directus/extensions) is not readable![39m
+[01:18:42.337] [32mINFO[39m: [36mServer started at http://127.0.0.1:8055[39m
+[01:18:42] [36mGET[39m /server/health [32m200[39m 20ms
+[01:18:42.739] [32mINFO[39m: [36mShutting down...[39m
 # exit_code: 0
-# fin: 2026-11-19T22:09:13Z
+# fin: 2026-11-20T01:18:42Z
