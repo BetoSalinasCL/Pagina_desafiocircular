@@ -21,3 +21,7 @@
 - DNS: zona administrada en Socio Virtual (ns1/ns2.sociovirtual.com), no en GoDaddy. Registro A `preview` → 177.7.56.127 creado.
 - Hallazgo: SPF autoriza solo Zoho (`-all`) mientras el MX es Google; sin DKIM ni DMARC visibles. Pendiente de decisión.
 - Nginx preview: fase 1 HTTP (ACME) y fase 2 HTTPS con clave + noindex.
+
+## 2026-11-19 (6)
+- Correo: SPF `v=spf1 include:_spf.google.com ip4:170.249.239.131 ~all` (se quita Zoho), DMARC `p=none`, DKIM Google 2048 (`google._domainkey`). Verificados en ns1.sociovirtual.com y 8.8.8.8.
+- Pendientes: quitar ip4 del hosting actual al lanzar; DMARC a `quarantine` en 2-4 semanas; borrar TXT zoho-verification y DKIM zc912653123 al cancelar Zoho; migrar DNS a Cloudflare.
