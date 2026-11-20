@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-mkdir -p /srv/desafiocircular/directus/extensions
-install -m 700 "$GITHUB_WORKSPACE/infra/root-2-directus-servicio-y-reinicio.sh" /srv/desafiocircular/root-2.sh && ls -l /srv/desafiocircular/root-2.sh
-ls -l /srv/desafiocircular/directus/node_modules/directus/cli.js /home/dcdeploy/.fnm/aliases/default/bin/node
+for t in NS SOA MX A; do echo "== $t"; dig +short desafiocircular.org $t; done
+echo "== host IP actual"; dig +short -x 170.249.239.131
+echo "== whois NS"; whois desafiocircular.org 2>/dev/null | grep -iE "name server|registrar:" | head
