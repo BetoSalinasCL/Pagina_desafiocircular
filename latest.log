@@ -1,10 +1,13 @@
-# commit: 25d59ce5857b7ff0188796e1be2a21565793067a
-# inicio: 2026-11-20T01:51:21Z
-== @ns1.sociovirtual.com
-v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwwA342mAZ55RUuMW6SLJZtDld22zav
-== @8.8.8.8
-v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwwA342mAZ55RUuMW6SLJZtDld22zav
-largo clave p=: 393
-FORMATO OK
+# commit: 2dad46e0d321c93f4e8d059684baf4b07ff185cd
+# inicio: 2026-11-20T01:53:51Z
+directus: active  enabled: enabled
+{"status":"ok"}
+Fri 2026-11-20 06:00:00 UTC 4h 6min - - dc-reboot.timer dc-reboot.service
+https sin clave: 000
+http -> 404 
+issuer=C = US, O = Let's Encrypt, CN = YE1
+notAfter=Feb 15 11:43:39 2027 GMT
+Mem:           3.8Gi       1.5Gi       412Mi        86Mi       2.2Gi       2.3Gi
+Swap:          2.0Gi       512Ki       2.0Gi
 # exit_code: 0
-# fin: 2026-11-20T01:51:21Z
+# fin: 2026-11-20T01:53:51Z
