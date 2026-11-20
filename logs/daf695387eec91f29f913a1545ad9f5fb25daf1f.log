@@ -1,0 +1,21 @@
+# commit: daf695387eec91f29f913a1545ad9f5fb25daf1f
+# inicio: 2026-11-20T01:54:13Z
+-rw-r--r-- 1 dcdeploy dcdeploy 1146 Nov 20 01:32 /srv/desafiocircular/infra/nginx/desafiocircular.conf
+
+/srv/desafiocircular/infra/nginx/:
+total 12
+-rw-r--r-- 1 dcdeploy dcdeploy 1146 Nov 20 01:32 desafiocircular.conf
+-rw-r--r-- 1 dcdeploy dcdeploy  260 Nov 20 01:31 fase1-http.conf
+-rw-r--r-- 1 dcdeploy dcdeploy 1146 Nov 20 01:31 fase2-preview.conf
+# preview.desafiocircular.org — protegido con clave. Gestionado desde el repo (infra/nginx).
+server {
+    listen 80; listen [::]:80;
+1
+2026/11/20 01:54:13 [emerg] 3786289#3786289: unknown directive "http2" in /etc/nginx/sites-enabled/desafiocircular.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+* SSL: no alternative certificate subject name matches target host name 'preview.desafiocircular.org'
+* old SSL session ID is stale, removing
+publico https: 000 err=SSL: no alternative certificate subject name matches target host name 'preview.desafiocircular.org'
+# exit_code: 60
+# fin: 2026-11-20T01:54:13Z
