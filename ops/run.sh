@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-curl -sL -o /dev/null -w "betosalinas.cl final: %{http_code} %{url_effective}\n" https://betosalinas.cl/
-curl -s -o /dev/null -w "preview.betosalinas.cl: %{http_code}\n" https://preview.betosalinas.cl/
+ls -la /srv/desafiocircular/www/preview/
+grep -o "<title>[^<]*" /srv/desafiocircular/www/preview/index.html; grep -c "Circular Awards en cifras" /srv/desafiocircular/www/preview/index.html
+curl -s -o /dev/null -w "preview: %{http_code}\n" https://preview.desafiocircular.org/
