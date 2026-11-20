@@ -1,10 +1,10 @@
-# commit: a7561f0d44063a108697a6d255faff951c4fab4e
-# inicio: 2026-11-20T01:43:34Z
+# commit: 25d59ce5857b7ff0188796e1be2a21565793067a
+# inicio: 2026-11-20T01:51:21Z
 == @ns1.sociovirtual.com
-"v=spf1 include:_spf.google.com ip4:170.249.239.131 ~all"
-"v=DMARC1; p=none;"
+v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwwA342mAZ55RUuMW6SLJZtDld22zav
 == @8.8.8.8
-"v=spf1 include:_spf.google.com ip4:170.249.239.131 ~all"
-"v=DMARC1; p=none;"
+v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwwA342mAZ55RUuMW6SLJZtDld22zav
+largo clave p=: 393
+FORMATO OK
 # exit_code: 0
-# fin: 2026-11-20T01:43:35Z
+# fin: 2026-11-20T01:51:21Z
