@@ -25,3 +25,6 @@
 ## 2026-11-19 (6)
 - Correo: SPF `v=spf1 include:_spf.google.com ip4:170.249.239.131 ~all` (se quita Zoho), DMARC `p=none`, DKIM Google 2048 (`google._domainkey`). Verificados en ns1.sociovirtual.com y 8.8.8.8.
 - Pendientes: quitar ip4 del hosting actual al lanzar; DMARC a `quarantine` en 2-4 semanas; borrar TXT zoho-verification y DKIM zc912653123 al cancelar Zoho; migrar DNS a Cloudflare.
+
+## 2026-11-19 (7)
+- Fix: nginx 1.24 no soporta `http2 on;` → `listen 443 ssl http2`. El reload de root-3 había fallado sin detener el script.
