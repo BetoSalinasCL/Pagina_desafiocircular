@@ -10,7 +10,7 @@ PW=$(openssl rand -base64 12 | tr -d '/+=')
 printf 'desafio:%s\n' "$(openssl passwd -apr1 "$PW")" > $N/.htpasswd
 chown root:www-data $N/.htpasswd; chmod 640 $N/.htpasswd
 cp $N/fase2-preview.conf $N/desafiocircular.conf && chown dcdeploy: $N/desafiocircular.conf
-nginx -t && systemctl reload nginx
+nginx -t; systemctl reload nginx
 echo; echo "================================================"
 echo " Preview: https://preview.desafiocircular.org"
 echo " Usuario: desafio"
