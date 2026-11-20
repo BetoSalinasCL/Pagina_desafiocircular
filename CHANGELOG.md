@@ -16,3 +16,8 @@
 ## 2026-11-19 (4)
 - Directus 11 instalado y probado (health ok). Servicio systemd `dc-directus`.
 - Reinicio del VPS programado 03:00 Chile por kernel/libc pendientes.
+
+## 2026-11-19 (5)
+- DNS: zona administrada en Socio Virtual (ns1/ns2.sociovirtual.com), no en GoDaddy. Registro A `preview` → 177.7.56.127 creado.
+- Hallazgo: SPF autoriza solo Zoho (`-all`) mientras el MX es Google; sin DKIM ni DMARC visibles. Pendiente de decisión.
+- Nginx preview: fase 1 HTTP (ACME) y fase 2 HTTPS con clave + noindex.
