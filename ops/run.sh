@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
-C=/srv/desafiocircular/infra/nginx/desafiocircular.conf
-ls -l $C /srv/desafiocircular/infra/nginx/; head -3 $C; grep -c 443 $C
-sudo -n /usr/sbin/nginx -t 2>&1 | tail -2
-curl -sv --resolve preview.desafiocircular.org:443:127.0.0.1 https://preview.desafiocircular.org/ -o /dev/null 2>&1 | grep -E "^< HTTP|error|SSL" | head -5
-curl -s -o /dev/null -w "publico https: %{http_code} err=%{errormsg}\n" https://preview.desafiocircular.org/
+N=/srv/desafiocircular/infra/nginx
+cp $GITHUB_WORKSPACE/infra/nginx/fase2-preview.conf $N/fase2-preview.conf
+cp $N/fase2-preview.conf $N/desafiocircular.conf
+ls -la $N | grep htpasswd
+if sudo -n /usr/sbin/nginx -t 2>&1 | tail -1 | grep -q successful; then sudo -n /usr/bin/systemctl reload nginx && echo RELOAD-OK
+else sudo -n /usr/sbin/nginx -t; cp $N/fase1-http.conf $N/desafiocircular.conf; echo "REVERTIDO A FASE1"; fi
+sleep 1
+curl -s -o /dev/null -w "https sin clave: %{http_code}\n" https://preview.desafiocircular.org/
+curl -s -o /dev/null -w "http: %{http_code} -> %{redirect_url}\n" http://preview.desafiocircular.org/
+curl -s -o /dev/null -w "betosalinas.cl: %{http_code}\n" https://betosalinas.cl/
+curl -sI https://preview.desafiocircular.org/ | grep -iE "x-robots|strict|www-auth"
