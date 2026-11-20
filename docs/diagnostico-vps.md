@@ -13,3 +13,6 @@
 - Swap de 2 GB para absorber picos de memoria.
 - Sitio Nginx propio en `/srv/desafiocircular/infra/nginx/desafiocircular.conf` (enlazado en sites-enabled); `dcdeploy` solo puede `nginx -t` y `reload`.
 - Secretos en `/srv/desafiocircular/.env` (600, fuera del repo).
+- ufw: solo OpenSSH y Nginx Full. Puertos 8501/8502 de Streamlit NO expuestos.
+- Directus 11.17.4 sobre Node 22 (fnm, usuario dcdeploy) en 127.0.0.1:8055, base `dc_directus`. Servicio systemd `dc-directus` (MemoryMax 700M).
+- Reinicio programado 2026-11-20 06:00 UTC (03:00 Chile), unidad `dc-reboot`.

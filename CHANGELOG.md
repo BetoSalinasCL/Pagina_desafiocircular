@@ -12,3 +12,7 @@
 ## 2026-11-19 (3)
 - Diagnóstico del VPS documentado en `docs/diagnostico-vps.md`.
 - `infra/bootstrap-root.sh`: swap, sitio Nginx propio, sudo mínimo para dcdeploy, base PostgreSQL propia.
+
+## 2026-11-19 (4)
+- Directus 11 instalado y probado (health ok). Servicio systemd `dc-directus`.
+- Reinicio del VPS programado 03:00 Chile por kernel/libc pendientes.
